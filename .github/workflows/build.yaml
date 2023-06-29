@@ -1,0 +1,31 @@
+name: Build React Project
+
+on:
+ push_request:
+ branches:
+  -main:
+ workflow_dispatch:
+
+ permissions:
+  contents: read
+
+jobs:
+ build:
+  name: Test Build
+  run-ons: ubuntu-latest
+  steps:
+   - name: Checkout
+     uses: actions/checkout@v3
+   - name: Set up React
+     uses: actions/setup-react@v3
+     with:
+      react-version: '18'
+      cache: npm
+   - name: Installation
+     run: npm install
+   - name: Build 
+    run: npm run build
+
+
+
+
