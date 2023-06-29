@@ -24,7 +24,7 @@ jobs:
       run: npm run build
       
     - name: Deploy production to Netlify
-      uses: divs-actiontutorial/action-netlify.dep
+      uses: divszz/action-netlify.dep
       with:
        github-token: ${{ secrets.GITHUB_TOKEN }}
        netlify-auth-token: ${{ secrets.NETLIFY_Auth_Token }}
