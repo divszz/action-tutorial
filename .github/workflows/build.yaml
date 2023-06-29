@@ -14,7 +14,7 @@ jobs:
     - name: checkout
       uses: actions/checkout@v3
     - name: Set up React
-      uses: actions/setup-react@v3
+      uses: actions/setup-node@v3
       with:
         react-version: '18'
         cache: npm
@@ -22,7 +22,7 @@ jobs:
       run: npm install
     - name: Build
       run: npm run build
-      
+
 
 
 
