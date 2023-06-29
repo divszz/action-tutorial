@@ -24,7 +24,7 @@ jobs:
       run: npm run build
       
     - name: Deploy production to Netlify
-      uses: South-Paw/action-netlify.dep
+      uses: South-Paw/action-netlify.deploy@v3
       with:
        github-token: ${{ secrets.GITHUB_TOKEN }}
        netlify-auth-token: ${{ secrets.NETLIFY_Auth_Token }}
