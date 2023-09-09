@@ -1,1 +1,28 @@
+name: Create Tar Gz
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Create Tar Gz
+      run: |
+       touch FOLDER_NAME.tar.gz
+       tar -czf FOLDER_NAME.tar.gz --exclude=FOLDER_NAME.tar.gz .
+      working-directory: ${{ github.workspace }}
+
+    - name: Upload Tar Gz
+      uses: actions/upload-artifact@v2
+      with:
+        name: myfiles-tar-gz
+        path: myfiles.tar.gz
+
 
