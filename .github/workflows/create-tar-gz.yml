@@ -19,8 +19,8 @@ jobs:
        tar -czf FOLDER_NAME.tar.gz --exclude=FOLDER_NAME.tar.gz .
       working-directory: ${{ github.workspace }}
 
-    - name: Upload Tar Gz
-      uses: actions/upload-artifact@v2
+   
+      
       
 
 
