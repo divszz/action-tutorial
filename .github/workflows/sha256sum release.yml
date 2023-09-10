@@ -15,8 +15,8 @@ jobs:
 
     - name: Generate sha256sum
       run: |
-        echo "021e20528d4810006a64443f70ae5c41409cb4dad67a275871313d7793d37886"> sha256sum.txt 
-        git add sha256sum.txt
-        git commit -m "Add sha256sum.txt"
-        git push
+       echo shasum -a 256 > sha256sum.txt  # Replace with your sha256sum generation command
+       git add sha256sum.txt
+       git commit -m "Add sha256sum.txt"
+       git push
 
