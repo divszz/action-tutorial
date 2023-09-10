@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Create Tar Gz 
+      - name: Create Tar Gz Archive
         run: |
           mkdir release
           cp -r /Users/divyanisingh/action-tutorial/action-tutorial-1/.github/workflows
