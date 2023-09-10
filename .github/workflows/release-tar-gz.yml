@@ -1,0 +1,30 @@
+name: Release Tar Gz File
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Tar Gz Archive
+        run: |
+          mkdir release
+          cp -r /Users/divyanisingh/action-tutorial/action-tutorial-1/.github/workflows
+          tar create-tar-gz.yml
+        working-directory: ${{ github.workspace }}
+      
+      -  name: Create Release
+         id: create_release
+         uses: actions/create-release@v1
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         with: 
+          tag_name: v1.0.0  
+          release_name: Release v1.0.0
