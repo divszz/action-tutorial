@@ -15,8 +15,8 @@ jobs:
 
     - name: Create Tar Gz
       run: |
-       touch FOLDER_NAME.tar.gz
-       tar -czf FOLDER_NAME.tar.gz --exclude=FOLDER_NAME.tar.gz .
+       touch action-tutorial.tar.gz
+       tar -czf action-tutorial.tar.gz --exclude=action-tutorial.tar.gz .
       working-directory: ${{ github.workspace }}
 
    
